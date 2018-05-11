@@ -1,6 +1,6 @@
 describe("Form input", () => {
   beforeEach(() => {
-    cy.seedAndVisit();
+    cy.seedAndVisit([]);
   });
   it("visits the app", () => {
     cy.focused().should("have.class", "new-todo");

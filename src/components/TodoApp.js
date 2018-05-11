@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import TodoForm from './TodoForm';
-import TodoList from './TodoList';
-import Footer from './Footer';
-import { saveTodo, loadTodos, destroyTodo, updateTodo } from '../lib/service';
-import { filterTodos } from '../lib/utils';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import TodoForm from "./TodoForm";
+import TodoList from "./TodoList";
+import Footer from "./Footer";
+import { saveTodo, loadTodos, destroyTodo, updateTodo } from "../lib/service";
+import { filterTodos } from "../lib/utils";
 
 export default class TodoApp extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentTodo: '',
+      currentTodo: "",
       todos: []
     };
     this.handleNewTodoChange = this.handleNewTodoChange.bind(this);
@@ -21,12 +21,9 @@ export default class TodoApp extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      loadTodos()
-        .then(({ data }) => this.setState({ todos: data }))
-        .catch(() => this.setState({ error: true }));
-    }, 5000);
-
+    loadTodos()
+      .then(({ data }) => this.setState({ todos: data }))
+      .catch(() => this.setState({ error: true }));
   }
 
   handleNewTodoChange(evt) {
@@ -64,7 +61,7 @@ export default class TodoApp extends Component {
       .then(({ data }) =>
         this.setState({
           todos: this.state.todos.concat(data),
-          currentTodo: ''
+          currentTodo: ""
         })
       )
       .catch(() => this.setState({ error: true }));
