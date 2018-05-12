@@ -10,13 +10,14 @@ describe("List item behavior", () => {
       .as("delete");
 
     cy.seedAndVisit();
+    cy.get(".todo-list li").as("list");
     cy
-      .get(".todo-list li")
+      .get("@list")
       .first()
       .find(".destroy")
       .invoke("show")
       .click();
     cy.wait("@delete");
-    cy.get(".todo-list li").should("have.length", 3);
+    cy.get("@list").should("have.length", 3);
   });
 });
