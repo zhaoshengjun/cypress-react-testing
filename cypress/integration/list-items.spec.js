@@ -14,6 +14,9 @@ describe("List item behavior", () => {
       .get(".todo-list li")
       .first()
       .find(".destroy")
-      .click({ force: true });
+      .invoke("show")
+      .click();
+    cy.wait("@delete");
+    cy.get(".todo-list li").should("have.length", 3);
   });
 });
