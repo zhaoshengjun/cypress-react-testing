@@ -1,21 +1,21 @@
 [{
     "id": 1,
     "name": "One",
-    "isCompleted": false
+    "isComplete": false
   },
   {
     "id": 2,
     "name": "Two",
-    "isCompleted": false
+    "isComplete": false
   },
   {
     "id": 3,
     "name": "Three",
-    "isCompleted": false
+    "isComplete": false
   },
   {
     "id": 4,
     "name": "Four",
-    "isCompleted": false
+    "isComplete": false
   }
 ]
