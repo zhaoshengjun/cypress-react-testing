@@ -1,9 +1,3 @@
 {
-  "todos": [
-    {
-      "name": "New todo",
-      "isComplete": false,
-      "id": 1
-    }
-  ]
+  "todos": []
 }
