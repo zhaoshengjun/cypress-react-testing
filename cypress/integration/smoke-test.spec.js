@@ -39,7 +39,7 @@ describe("Smoke tests", () => {
             .click();
           cy.wait("@delete");
         })
-        .should("have.length", 0);
+        .should("not.exist");
     });
   });
 });
